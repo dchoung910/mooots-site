@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mooots: find your people nearby</title>
+<meta name="description" content="Mooots: find your people nearby. Get an invite when we're ready.">
+<meta name="theme-color" content="#111113">
+<meta property="og:title" content="Mooots">
+<meta property="og:description" content="Find your people nearby.">
+<meta property="og:url" content="https://mooots.app/">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/AlbertSans-Light.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="teaser">
+
+  <div class="spacer" aria-hidden="true"></div>
+
+  <main>
+    <h1 class="headline">
+      <svg class="logo" role="img" aria-label="mooots" viewBox="160 170 880 350">
+        <text x="382" y="380" text-anchor="end" font-family="Albert Sans" font-weight="300" font-size="250" fill="#FAF5EF">m</text>
+        <text x="828" y="380" font-family="Albert Sans" font-weight="300" font-size="250" letter-spacing="-4" fill="#FAF5EF">ts</text>
+        <g fill="none" stroke="#FAF5EF" stroke-width="14">
+          <circle cx="455" cy="312" r="61"/><circle cx="605" cy="312" r="61"/><circle cx="755" cy="312" r="61"/>
+        </g>
+        <g fill="none" stroke="#FAF5EF" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M455 380 L455 448 L443 494 M455 448 L467 494"/>
+          <path d="M605 380 L605 448 L593 494 M605 448 L617 494"/>
+          <path d="M755 380 L755 448 L743 494 M755 448 L767 494"/>
+          <path d="M455 404 C480 412 505 430 530 430 C555 430 580 412 605 404 C630 412 655 430 680 430 C705 430 730 412 755 404"/>
+          <path d="M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446"/>
+        </g>
+        <g fill="#FAF5EF">
+          <circle cx="456" cy="306" r="9"/><circle cx="492" cy="306" r="9"/><circle cx="587" cy="306" r="9"/><circle cx="623" cy="306" r="9"/>
+          <circle cx="718" cy="306" r="9"/><circle cx="754" cy="306" r="9"/><circle cx="530" cy="430" r="9"/><circle cx="680" cy="430" r="9"/>
+        </g>
+      </svg>: find your people nearby.</h1>
+
+    <form class="waitlist" id="waitlist" novalidate>
+      <label for="phone">Get an invite when we're ready</label>
+      <div class="pf" id="phone-field">
+        <span class="pf-prefix" aria-hidden="true">+1</span>
+        <input id="phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" enterkeyhint="go" placeholder="(555) 555-5555" aria-describedby="phone-error consent">
+        <button type="submit" id="join"><span class="btn-long">Join the waitlist</span><span class="btn-short">Join</span></button>
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label for="website">Leave this empty</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <p class="field-error" id="phone-error" role="alert"></p>
+      <p class="consent" id="consent">By joining, you agree to get one text from Mooots when it's your turn. 18+ only. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms</a>.</p>
+    </form>
+
+    <div class="joined" id="joined" role="status" hidden>
+      <strong>You're on the list.</strong>
+      <span>We'll text you when it's time.</span>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 Third Place Ventures LLC</span>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </footer>
+
+</div>
+<script src="assets/waitlist.js"></script>
+</body>
+</html>

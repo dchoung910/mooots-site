@@ -1,0 +1,90 @@
+/* Mooots site styles. Colors and type match the app (Mooots/constants/tokens.ts). */
+
+@font-face { font-family: "Albert Sans"; font-weight: 300; font-style: normal; font-display: swap; src: url("../fonts/AlbertSans-Light.ttf") format("truetype"); }
+@font-face { font-family: "Albert Sans"; font-weight: 400; font-style: normal; font-display: swap; src: url("../fonts/AlbertSans-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Albert Sans"; font-weight: 600; font-style: normal; font-display: swap; src: url("../fonts/AlbertSans-SemiBold.ttf") format("truetype"); }
+
+:root {
+  --paper: #111113;
+  --raised: #1C1C1F;
+  --ink: #FAF5EF;
+  --ink-soft: #CFCCD6;
+  --ink-faint: #A8A4B3;
+  --rule: rgba(250, 245, 239, 0.16);
+  --focus: #7EA1FF;
+  --danger: #F48ACB;
+}
+
+html { color-scheme: dark; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Albert Sans", system-ui, sans-serif; font-weight: 400; -webkit-font-smoothing: antialiased; }
+a { color: var(--ink-soft); }
+a:hover { color: var(--ink); }
+[hidden] { display: none !important; }
+
+/* ---------- Teaser (index.html) ---------- */
+
+.teaser { min-height: 100vh; min-height: 100dvh; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 48px; padding: 32px 24px 28px; }
+.teaser main { width: 100%; max-width: 800px; display: flex; flex-direction: column; align-items: center; gap: clamp(72px, 15vh, 170px); text-align: center; }
+.spacer { height: 20px; }
+
+/* Logo sits inline with the headline: 1em of text = 250 logo units, so the
+   logo's letters match the headline and the figures hang below the baseline. */
+.headline { margin: 0; font-weight: 300; font-size: min(48px, calc((100vw - 48px) / 15.5)); line-height: 1.5; letter-spacing: -0.01em; white-space: nowrap; }
+.headline .logo { width: 3.52em; height: 1.4em; vertical-align: -0.56em; margin-right: 0.12em; }
+
+.waitlist { width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.waitlist label { font-size: 13px; color: var(--ink-soft); }
+
+/* Phone field: "+1" prefix, input and button joined in one rounded bar. */
+.pf { display: flex; align-items: center; width: 100%; max-width: 400px; box-sizing: border-box; height: 52px; margin-top: 24px; padding: 5px 5px 5px 16px; background: var(--raised); border: 1px solid rgba(250, 245, 239, 0.28); border-radius: 12px; transition: border-color .15s, box-shadow .15s; }
+.pf:hover { border-color: rgba(250, 245, 239, 0.45); }
+.pf:focus-within { border-color: var(--focus); box-shadow: 0 0 0 3px rgba(126, 161, 255, 0.22); }
+.pf.err { border-color: var(--danger); box-shadow: 0 0 0 3px rgba(244, 138, 203, 0.18); }
+.pf-prefix { font-size: 17px; color: var(--ink-soft); padding-right: 10px; border-right: 1px solid var(--rule); line-height: 22px; }
+.pf input { flex: 1 1 auto; min-width: 0; height: 100%; padding: 0 8px 0 10px; border: 0; outline: 0; background: transparent; color: var(--ink); font-family: inherit; font-size: 17px; letter-spacing: 0.02em; }
+.pf input::placeholder { color: #8E8B96; }
+.pf button { flex: 0 0 auto; height: 40px; padding: 0 18px; border: 0; border-radius: 8px; background: var(--ink); color: var(--paper); font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; transition: background .15s, opacity .15s; }
+.pf button:hover { background: #FFFFFF; }
+.pf button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.pf button:disabled { opacity: 0.6; cursor: default; }
+.btn-short { display: none; }
+/* Narrow phones: shorter button so the full number fits in the field. */
+@media (max-width: 420px) {
+  .btn-long { display: none; }
+  .btn-short { display: inline; }
+  .pf button { padding: 0 16px; }
+}
+.busy .btn-long, .busy .btn-short { display: none; }
+.busy .pf button::after { content: "Joining…"; }
+
+.field-error { margin: 10px 0 0; min-height: 20px; font-size: 13px; line-height: 20px; color: var(--danger); }
+.consent { margin: 14px 0 0; max-width: 400px; font-size: 12px; line-height: 1.6; color: var(--ink-faint); }
+
+/* Off-screen trap field for bots. People never see or fill it. */
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+
+.joined { width: 100%; max-width: 400px; box-sizing: border-box; border: 1px solid var(--rule); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 6px; text-align: center; }
+.joined strong { font-size: 17px; font-weight: 600; }
+.joined span { font-size: 14px; color: var(--ink-soft); }
+
+.site-footer { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; font-size: 12px; color: var(--ink-faint); }
+.site-footer a { color: var(--ink-faint); }
+.site-footer a:hover { color: var(--ink); }
+
+/* ---------- Text pages (privacy.html, terms.html) ---------- */
+
+.doc { padding: 32px 24px 96px; }
+.doc nav, .doc article, .doc .site-footer { max-width: 680px; margin: 0 auto; }
+.doc nav { padding-bottom: 72px; }
+.doc nav a { display: inline-block; }
+.doc nav .logo { width: 110px; height: 40px; }
+.doc article { display: flex; flex-direction: column; gap: 40px; font-size: 16px; line-height: 1.7; color: var(--ink-soft); }
+.doc header { display: flex; flex-direction: column; gap: 12px; }
+.doc h1 { margin: 0; font-weight: 300; font-size: clamp(36px, 5vw, 48px); line-height: 1.1; color: var(--ink); }
+.doc .meta { margin: 0; font-size: 14px; color: var(--ink-faint); }
+.doc section { display: flex; flex-direction: column; gap: 12px; }
+.doc h2 { margin: 0; font-size: 20px; font-weight: 600; color: var(--ink); }
+.doc p, .doc ul { margin: 0; }
+.doc ul { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
+.doc strong { color: var(--ink); font-weight: 600; }
+.doc .site-footer { justify-content: flex-start; margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--rule); }

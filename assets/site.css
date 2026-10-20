@@ -47,7 +47,7 @@ a:hover { color: var(--ink); }
 
 
 .waitlist { width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; }
-.waitlist label { font-size: 13px; color: var(--ink-soft); }
+.waitlist label { font-size: 17px; color: var(--ink); }
 
 /* Phone field: "+1" prefix, input and button joined in one rounded bar. */
 .pf { display: flex; align-items: center; width: 100%; max-width: 400px; box-sizing: border-box; height: 52px; margin-top: 24px; padding: 5px 5px 5px 16px; background: var(--raised); border: 1px solid rgba(250, 245, 239, 0.28); border-radius: 12px; transition: border-color .15s, box-shadow .15s; }

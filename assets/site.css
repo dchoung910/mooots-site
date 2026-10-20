@@ -27,14 +27,12 @@ a:hover { color: var(--ink); }
 .teaser main { width: 100%; max-width: 800px; display: flex; flex-direction: column; align-items: center; gap: clamp(72px, 15vh, 170px); text-align: center; }
 .spacer { height: 20px; }
 
-/* Logo sits inline with the headline: 1em of text = 250 logo units, so the
-   logo's letters match the headline and the figures hang below the baseline. */
-.headline { margin: 0; font-weight: 300; font-size: min(48px, calc((100vw - 48px) / 15.5)); line-height: 1.5; letter-spacing: -0.01em; white-space: nowrap; }
-.headline .logo { width: 3.52em; height: 1.4em; vertical-align: -0.56em; margin-right: 0.12em; }
+/* The wordmark on its own is the headline. */
+.headline { margin: 0; font-weight: 300; line-height: 0; }
+.headline .logo { display: block; width: min(360px, 72vw); height: auto; aspect-ratio: 880 / 350; }
 
-.hero { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-.whisper { margin: 0; font-size: 15px; font-weight: 300; letter-spacing: 0.02em; color: var(--ink-faint); }
-
+.hero { display: flex; flex-direction: column; align-items: center; gap: 28px; }
+.whisper { margin: 0; max-width: 420px; font-size: 18px; font-weight: 300; line-height: 1.5; letter-spacing: 0.01em; color: var(--ink-soft); text-wrap: balance; }
 
 
 .waitlist { width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; }

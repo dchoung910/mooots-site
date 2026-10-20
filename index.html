@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mooots</title>
 <meta name="description" content="let's go outside. just trying to build local community with spontaneous hangouts.">
-<meta name="theme-color" content="#111113">
+<meta name="theme-color" content="#000000">
 <meta property="og:title" content="Mooots">
 <meta property="og:description" content="let's go outside. just trying to build local community with spontaneous hangouts.">
 <meta property="og:url" content="https://mooots.app/">
@@ -18,14 +18,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/AlbertSans-Light.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="assets/site.css?v=20261020b">
+<link rel="stylesheet" href="assets/site.css?v=20261020c">
 </head>
 <body>
 <div class="teaser">
 
-  <div class="spacer" aria-hidden="true"></div>
-
-  <main>
+  <header class="top grid">
     <div class="hero">
     <h1 class="headline">
       <svg class="logo" role="img" aria-label="mooots" viewBox="160 170 880 350">
@@ -58,6 +56,10 @@
       </svg></h1>
     <p class="whisper">let's go outside. just trying to build local community with spontaneous hangouts.</p>
     </div>
+  </header>
+
+  <div class="below dots">
+  <main>
 
     <form class="waitlist" id="waitlist" novalidate>
       <label for="phone">Get an invite when the app is ready</label>
@@ -75,6 +77,7 @@
     </form>
 
     <div class="joined" id="joined" role="status" hidden>
+      <span class="badge-in">You're in</span>
       <strong>You're on the list.</strong>
       <span>We'll text you when it's time.</span>
       <button type="button" class="share" id="share">Bring a friend</button>
@@ -87,9 +90,10 @@
     <a href="terms.html">Terms</a>
     <a href="https://www.tiktok.com/@mooots.app" rel="me noopener" target="_blank">TikTok</a>
   </footer>
+  </div>
 
 </div>
-<script src="assets/dance.js?v=20261020b"></script>
-<script src="assets/waitlist.js?v=20261020b"></script>
+<script src="assets/dance.js?v=20261020c"></script>
+<script src="assets/waitlist.js?v=20261020c"></script>
 </body>
 </html>

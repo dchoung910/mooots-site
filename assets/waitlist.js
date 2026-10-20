@@ -94,6 +94,8 @@
       .then(function () {
         form.hidden = true;
         joined.hidden = false;
+        // A little celebration: the logo figures dance right away.
+        if (window.mooootsDance) window.mooootsDance();
       })
       .catch(function () {
         setBusy(false);

@@ -23,9 +23,20 @@ a:hover { color: var(--ink); }
 
 /* ---------- Teaser (index.html) ---------- */
 
-.teaser { min-height: 100vh; min-height: 100dvh; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 48px; padding: 32px 24px 28px; }
-.teaser main { width: 100%; max-width: 800px; display: flex; flex-direction: column; align-items: center; gap: clamp(72px, 15vh, 170px); text-align: center; }
-.spacer { height: 20px; }
+/* Black header band with the app's grid (fading out downward), then the
+   dot texture behind the form and footer. Same look as the app's screens. */
+.teaser { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
+.top { background: #000000; border-bottom: 1px solid var(--rule); padding: clamp(56px, 12vh, 120px) 24px clamp(48px, 9vh, 88px); display: flex; justify-content: center; text-align: center; }
+.below { flex: 1 0 auto; display: flex; flex-direction: column; align-items: center; padding: 0 24px; }
+.below main { width: 100%; max-width: 800px; flex: 1 0 auto; display: flex; flex-direction: column; align-items: center; padding: clamp(48px, 8vh, 80px) 0 56px; text-align: center; }
+.below .site-footer { padding: 24px 0 28px; }
+
+.grid { position: relative; isolation: isolate; }
+.grid::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image: linear-gradient(rgba(250, 245, 239, 0.20) 1px, transparent 1px), linear-gradient(90deg, rgba(250, 245, 239, 0.20) 1px, transparent 1px);
+  background-size: 39px 39px; background-position: center top;
+  -webkit-mask-image: linear-gradient(to bottom, #000, transparent); mask-image: linear-gradient(to bottom, #000, transparent); }
+.dots { background-image: radial-gradient(circle, rgba(250, 245, 239, 0.11) 1.4px, transparent 1.8px); background-size: 20px 20px; background-position: 10px 10px; }
 
 /* The wordmark on its own is the headline. */
 .headline { margin: 0; font-weight: 300; line-height: 0; }
@@ -60,18 +71,24 @@ a:hover { color: var(--ink); }
 .busy .btn-long, .busy .btn-short { display: none; }
 .busy .pf button::after { content: "Joining…"; }
 
-.field-error { margin: 10px 0 0; min-height: 20px; font-size: 13px; line-height: 20px; color: var(--danger); }
-.consent { margin: 14px 0 0; max-width: 400px; font-size: 12px; line-height: 1.6; color: var(--ink-faint); }
+.field-error { margin: 10px 0 0; font-size: 13px; line-height: 20px; color: var(--danger); }
+/* No reserved gap: the error line only takes space when there's an error. */
+.field-error:empty { display: none; }
+.consent { margin: 16px 0 0; max-width: 400px; font-size: 12px; line-height: 1.6; color: var(--ink-faint); }
 
 /* Off-screen trap field for bots. People never see or fill it. */
 .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 
-.joined { width: 100%; max-width: 400px; box-sizing: border-box; border: 1px solid var(--rule); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 6px; text-align: center; }
-.joined strong { font-size: 17px; font-weight: 600; }
-.joined span { font-size: 14px; color: var(--ink-soft); }
-.joined .share { align-self: center; margin-top: 10px; height: 40px; padding: 0 18px; border: 1px solid rgba(250, 245, 239, 0.4); border-radius: 8px; background: transparent; color: var(--ink); font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; transition: border-color .15s, background .15s; }
-.joined .share:hover { border-color: var(--ink); background: rgba(250, 245, 239, 0.06); }
+.joined { width: 100%; max-width: 400px; box-sizing: border-box; background: var(--raised); border: 1px solid rgba(250, 245, 239, 0.10); border-radius: 14px; padding: 24px 20px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; animation: joined-in .35s ease-out; }
+.joined strong { font-size: 20px; font-weight: 600; margin-top: 8px; }
+.joined > span { font-size: 15px; color: var(--ink-soft); }
+/* The app's "You're in" badge (StatusBadge joined, tint variant). */
+.joined .badge-in { padding: 4px 12px; border-radius: 999px; border: 1px solid #6FD39E; background: rgba(111, 211, 158, 0.12); color: #6FD39E; font-size: 11px; font-weight: 600; }
+.joined .share { margin-top: 16px; height: 44px; padding: 0 22px; border: 0; border-radius: 10px; background: var(--ink); color: var(--paper); font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; transition: background .15s; }
+.joined .share:hover { background: #FFFFFF; }
 .joined .share:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+@keyframes joined-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .joined { animation: none; } }
 
 .site-footer { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; font-size: 12px; color: var(--ink-faint); }
 .site-footer a { color: var(--ink-faint); }

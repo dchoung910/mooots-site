@@ -61,3 +61,7 @@ Remove Squarespace's default website records, then add:
 - Replace `[GO-LIVE DATE]` in `privacy.html` and `terms.html`.
 - Connect the waitlist sheet (above).
 - Before sending any texts: register the sending number with carriers (10DLC) and name the SMS provider in the Privacy Policy.
+
+## Updating styles or scripts
+
+GitHub Pages lets browsers cache files for 10 minutes. When you change `assets/site.css` or a script, bump the `?v=` number on its `<link>`/`<script>` tags (in every HTML file that uses it) so visitors get the new version together with the new page.

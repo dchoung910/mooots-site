@@ -3,7 +3,7 @@
 (function () {
   // Paste the Apps Script web app URL here (Deploy > Manage deployments).
   // While it's empty the form refuses signups, so no number is ever lost.
-  var ENDPOINT = '';
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbyhBVgMhGUQ2vayx9-d_0346bsTz6-6klv3oHTtW5nfkzV1KbFkJTzveQReCqz490NY/exec';
 
   var form = document.getElementById('waitlist');
   var field = document.getElementById('phone-field');

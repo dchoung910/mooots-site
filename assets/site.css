@@ -32,6 +32,19 @@ a:hover { color: var(--ink); }
 .headline { margin: 0; font-weight: 300; font-size: min(48px, calc((100vw - 48px) / 15.5)); line-height: 1.5; letter-spacing: -0.01em; white-space: nowrap; }
 .headline .logo { width: 3.52em; height: 1.4em; vertical-align: -0.56em; margin-right: 0.12em; }
 
+.hero { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.whisper { margin: 0; font-size: 15px; font-weight: 300; letter-spacing: 0.02em; color: var(--ink-faint); }
+
+/* The three figures blink one after another: once on load, then every 7s. */
+.logo .eyes { transform-box: fill-box; transform-origin: center; animation: blink 7s ease-in-out 0.9s infinite; }
+.logo .eyes:nth-of-type(2) { animation-delay: 1.05s; }
+.logo .eyes:nth-of-type(3) { animation-delay: 1.2s; }
+@keyframes blink {
+  0%, 3.5%, 100% { transform: scaleY(1); }
+  1.6% { transform: scaleY(0.1); }
+}
+@media (prefers-reduced-motion: reduce) { .logo .eyes { animation: none; } }
+
 .waitlist { width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; }
 .waitlist label { font-size: 13px; color: var(--ink-soft); }
 
@@ -66,6 +79,9 @@ a:hover { color: var(--ink); }
 .joined { width: 100%; max-width: 400px; box-sizing: border-box; border: 1px solid var(--rule); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 6px; text-align: center; }
 .joined strong { font-size: 17px; font-weight: 600; }
 .joined span { font-size: 14px; color: var(--ink-soft); }
+.joined .share { align-self: center; margin-top: 10px; height: 40px; padding: 0 18px; border: 1px solid rgba(250, 245, 239, 0.4); border-radius: 8px; background: transparent; color: var(--ink); font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; transition: border-color .15s, background .15s; }
+.joined .share:hover { border-color: var(--ink); background: rgba(250, 245, 239, 0.06); }
+.joined .share:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
 .site-footer { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; font-size: 12px; color: var(--ink-faint); }
 .site-footer a { color: var(--ink-faint); }

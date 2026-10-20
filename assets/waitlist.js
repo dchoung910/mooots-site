@@ -48,6 +48,26 @@
     form.classList.toggle('busy', busy);
   }
 
+  // "Bring a friend": the phone's share sheet, or copy the link on desktop.
+  // Shared links are tagged so the sheet shows signups that came from friends.
+  var share = document.getElementById('share');
+  var shareUrl = 'https://mooots.app/?from=friend';
+  share.addEventListener('click', function () {
+    if (navigator.share) {
+      navigator.share({ title: 'Mooots', text: 'find your people nearby.', url: shareUrl }).catch(function () {});
+      return;
+    }
+    var done = function () {
+      share.textContent = 'Link copied';
+      setTimeout(function () { share.textContent = 'Bring a friend'; }, 2500);
+    };
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(shareUrl).then(done, function () { window.prompt('Copy this link:', shareUrl); });
+    } else {
+      window.prompt('Copy this link:', shareUrl);
+    }
+  });
+
   input.addEventListener('input', function () {
     input.value = format(digits(input.value));
     setError('');

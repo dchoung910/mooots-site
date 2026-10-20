@@ -26,6 +26,7 @@
   <div class="spacer" aria-hidden="true"></div>
 
   <main>
+    <div class="hero">
     <h1 class="headline">
       <svg class="logo" role="img" aria-label="mooots" viewBox="160 170 880 350">
         <text x="382" y="380" text-anchor="end" font-family="Albert Sans" font-weight="300" font-size="250" fill="#FAF5EF">m</text>
@@ -41,10 +42,14 @@
           <path d="M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446"/>
         </g>
         <g fill="#FAF5EF">
-          <circle cx="456" cy="306" r="9"/><circle cx="492" cy="306" r="9"/><circle cx="587" cy="306" r="9"/><circle cx="623" cy="306" r="9"/>
-          <circle cx="718" cy="306" r="9"/><circle cx="754" cy="306" r="9"/><circle cx="530" cy="430" r="9"/><circle cx="680" cy="430" r="9"/>
+          <g class="eyes"><circle cx="456" cy="306" r="9"/><circle cx="492" cy="306" r="9"/></g>
+          <g class="eyes"><circle cx="587" cy="306" r="9"/><circle cx="623" cy="306" r="9"/></g>
+          <g class="eyes"><circle cx="718" cy="306" r="9"/><circle cx="754" cy="306" r="9"/></g>
+          <circle cx="530" cy="430" r="9"/><circle cx="680" cy="430" r="9"/>
         </g>
       </svg>: find your people nearby.</h1>
+    <p class="whisper">let's go outside.</p>
+    </div>
 
     <form class="waitlist" id="waitlist" novalidate>
       <label for="phone">Get an invite when we're ready</label>
@@ -64,11 +69,12 @@
     <div class="joined" id="joined" role="status" hidden>
       <strong>You're on the list.</strong>
       <span>We'll text you when it's time.</span>
+      <button type="button" class="share" id="share">Bring a friend</button>
     </div>
   </main>
 
   <footer class="site-footer">
-    <span>© 2026 Third Space Ventures LLC</span>
+    <span>© 2026 Mooots™ · Third Space Ventures LLC</span>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
     <a href="https://www.tiktok.com/@mooots.app" rel="me noopener" target="_blank">TikTok</a>

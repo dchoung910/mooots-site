@@ -34,18 +34,26 @@
         <g fill="none" stroke="#FAF5EF" stroke-width="14">
           <circle cx="455" cy="312" r="61"/><circle cx="605" cy="312" r="61"/><circle cx="755" cy="312" r="61"/>
         </g>
+        <!-- The dance from the app's loading screen (components/mooot/ring-heads.tsx):
+             joined hands lift and drop, outer arms wave, legs kick on alternating
+             beats. Each step is one 480ms beat; assets/dance.js starts a burst
+             every 5-10s. SMIL is used because Safari can't animate path shapes in CSS. -->
         <g fill="none" stroke="#FAF5EF" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M455 380 L455 448 L443 494 M455 448 L467 494"/>
-          <path d="M605 380 L605 448 L593 494 M605 448 L617 494"/>
-          <path d="M755 380 L755 448 L743 494 M755 448 L767 494"/>
-          <path d="M455 404 C480 412 505 430 530 430 C555 430 580 412 605 404 C630 412 655 430 680 430 C705 430 730 412 755 404"/>
-          <path d="M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446"/>
+          <path d="M455 380 L455 448 L443 494"/>
+          <path d="M605 380 L605 448 L593 494"/>
+          <path d="M755 380 L755 448 L743 494"/>
+          <path d="M455 448 L467 494"><animate class="dance" attributeName="d" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="M455 448 L467 494;M455 448 L481 476;M455 448 L467 494;M455 448 L481 476;M455 448 L467 494;M455 448 L467 494"/></path>
+          <path d="M605 448 L617 494"><animate class="dance" attributeName="d" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="M605 448 L617 494;M605 448 L617 494;M605 448 L631 476;M605 448 L617 494;M605 448 L631 476;M605 448 L617 494"/></path>
+          <path d="M755 448 L767 494"><animate class="dance" attributeName="d" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="M755 448 L767 494;M755 448 L781 476;M755 448 L767 494;M755 448 L781 476;M755 448 L767 494;M755 448 L767 494"/></path>
+          <path d="M455 404 C480 412 505 430 530 430 C555 430 580 412 605 404 C630 412 655 430 680 430 C705 430 730 412 755 404"><animate class="dance" attributeName="d" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="M455 404 C480 412 505 430 530 430 C555 430 580 412 605 404 C630 412 655 430 680 430 C705 430 730 412 755 404;M455 404 C480 396 505 386 530 386 C555 386 580 396 605 404 C630 396 655 386 680 386 C705 386 730 396 755 404;M455 404 C480 412 505 430 530 430 C555 430 580 412 605 404 C630 412 655 430 680 430 C705 430 730 412 755 404;M455 404 C480 396 505 386 530 386 C555 386 580 396 605 404 C630 396 655 386 680 386 C705 386 730 396 755 404;M455 404 C480 412 505 430 530 430 C555 430 580 412 605 404 C630 412 655 430 680 430 C705 430 730 412 755 404;M455 404 C480 412 505 430 530 430 C555 430 580 412 605 404 C630 412 655 430 680 430 C705 430 730 412 755 404"/></path>
+          <path d="M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446"><animate class="dance" attributeName="d" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446;M455 404 C441 394 433 380 430 366 M755 404 C769 394 777 380 780 366;M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446;M455 404 C441 394 433 380 430 366 M755 404 C769 394 777 380 780 366;M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446;M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446"/></path>
         </g>
         <g fill="#FAF5EF">
-          <g class="eyes"><circle cx="456" cy="306" r="9"/><circle cx="492" cy="306" r="9"/></g>
-          <g class="eyes"><circle cx="587" cy="306" r="9"/><circle cx="623" cy="306" r="9"/></g>
-          <g class="eyes"><circle cx="718" cy="306" r="9"/><circle cx="754" cy="306" r="9"/></g>
-          <circle cx="530" cy="430" r="9"/><circle cx="680" cy="430" r="9"/>
+          <circle cx="456" cy="306" r="9"/><circle cx="492" cy="306" r="9"/>
+          <circle cx="587" cy="306" r="9"/><circle cx="623" cy="306" r="9"/>
+          <circle cx="718" cy="306" r="9"/><circle cx="754" cy="306" r="9"/>
+          <circle cx="530" cy="430" r="9"><animate class="dance" attributeName="cy" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="430;386;430;386;430;430"/></circle>
+          <circle cx="680" cy="430" r="9"><animate class="dance" attributeName="cy" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="430;386;430;386;430;430"/></circle>
         </g>
       </svg>: find your people nearby.</h1>
     <p class="whisper">let's go outside.</p>
@@ -81,6 +89,7 @@
   </footer>
 
 </div>
+<script src="assets/dance.js"></script>
 <script src="assets/waitlist.js"></script>
 </body>
 </html>

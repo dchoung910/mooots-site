@@ -35,15 +35,7 @@ a:hover { color: var(--ink); }
 .hero { display: flex; flex-direction: column; align-items: center; gap: 14px; }
 .whisper { margin: 0; font-size: 15px; font-weight: 300; letter-spacing: 0.02em; color: var(--ink-faint); }
 
-/* The three figures blink one after another: once on load, then every 7s. */
-.logo .eyes { transform-box: fill-box; transform-origin: center; animation: blink 7s ease-in-out 0.9s infinite; }
-.logo .eyes:nth-of-type(2) { animation-delay: 1.05s; }
-.logo .eyes:nth-of-type(3) { animation-delay: 1.2s; }
-@keyframes blink {
-  0%, 3.5%, 100% { transform: scaleY(1); }
-  1.6% { transform: scaleY(0.1); }
-}
-@media (prefers-reduced-motion: reduce) { .logo .eyes { animation: none; } }
+
 
 .waitlist { width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; }
 .waitlist label { font-size: 13px; color: var(--ink-soft); }

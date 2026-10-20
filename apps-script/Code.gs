@@ -8,7 +8,7 @@
  */
 
 var SHEET_NAME = 'Waitlist';
-var HEADERS = ['Joined (UTC)', 'Phone', 'Consent wording', 'Status'];
+var HEADERS = ['Joined (UTC)', 'Phone', 'Source', 'Consent wording', 'Status'];
 
 function doPost(e) {
   var p = (e && e.parameter) || {};
@@ -21,6 +21,8 @@ function doPost(e) {
   if (d.length !== 10) return done();
   var phone = '+1' + d;
   var consent = String(p.consent || '').slice(0, 1000);
+  // Which link they came from (e.g. "tiktok"), set by the bio link tag.
+  var source = String(p.source || 'direct').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 30) || 'direct';
 
   var lock = LockService.getScriptLock();
   lock.waitLock(10000);
@@ -35,7 +37,7 @@ function doPost(e) {
       }
     }
     // The leading apostrophe keeps Sheets from turning "+1..." into a number.
-    sheet.appendRow([new Date().toISOString(), "'" + phone, consent, 'Waiting']);
+    sheet.appendRow([new Date().toISOString(), "'" + phone, source, consent, 'Waiting']);
   } finally {
     lock.releaseLock();
   }

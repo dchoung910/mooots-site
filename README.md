@@ -11,6 +11,7 @@ The Mooots teaser site: one page with a waitlist, plus Privacy and Terms. Plain 
 | `assets/waitlist.js` | Phone formatting, validation, sending to the sheet |
 | `apps-script/Code.gs` | Google Apps Script that saves signups to a Google Sheet |
 | `fonts/` | Albert Sans, self-hosted (SIL Open Font License, see `fonts/OFL.txt`) |
+| `og.png` | Link preview image (1200×630) shown when mooots.app is shared |
 | `CNAME` | Tells GitHub Pages to serve the site at mooots.app |
 
 No cookies, analytics or third-party requests. Nothing private belongs in this repo: it's public.
@@ -29,7 +30,9 @@ Open `index.html` in a browser. The form shows "Signups aren't open yet" until t
 4. Authorize when asked, then copy the **Web app URL**.
 5. Paste it into `ENDPOINT` at the top of `assets/waitlist.js`, commit and push.
 
-Signups land in the **Waitlist** tab: time joined, phone, the consent wording they agreed to, and a status column. If you edit `Code.gs` later, use **Deploy → Manage deployments → Edit → New version** so the URL stays the same.
+Signups land in the **Waitlist** tab: time joined, phone, source, the consent wording they agreed to, and a status column.
+
+**Source** comes from a `?from=` tag on the link people used, so no cookies or tracking are needed. The TikTok bio links to `https://mooots.app/?from=tiktok`; anyone who types the address directly shows as `direct`. Make new tags the same way (`?from=instagram`, `?from=flyer`). If you edit `Code.gs` later, use **Deploy → Manage deployments → Edit → New version** so the URL stays the same.
 
 If your Google Workspace account doesn't allow "Anyone" access, ask the Workspace admin (you) to allow it under Apps Script sharing settings, or create the sheet with a personal Google account.
 

@@ -14,6 +14,14 @@
   var consent = document.getElementById('consent');
   var joined = document.getElementById('joined');
 
+  // Where the visitor came from, taken from a tag on the link they used
+  // (e.g. the TikTok bio links to mooots.app/?from=tiktok). Untagged = "direct".
+  var source = (function () {
+    var tag = new URLSearchParams(location.search).get('from') || '';
+    tag = tag.toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, 30);
+    return tag || 'direct';
+  })();
+
   // Keep 10 digits, dropping a leading +1 / 1 from pasted numbers.
   function digits(v) {
     var d = String(v || '').replace(/\D/g, '');
@@ -57,6 +65,7 @@
     var body = new URLSearchParams({
       phone: '+1' + d,
       consent: consent.textContent.trim(),
+      source: source,
       website: trap.value
     });
     // Apps Script doesn't send CORS headers, so the response can't be read.

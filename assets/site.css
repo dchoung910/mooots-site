@@ -158,4 +158,6 @@ a:hover { color: var(--ink); }
 .doc .site-footer { justify-content: flex-start; margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--rule); }
 
 /* Just the three dancing figures above the hero headline. */
-.hero-sec .mark { display: block; width: clamp(136px, 34vw, 190px); height: auto; aspect-ratio: 450 / 272; margin: 0 auto clamp(44px, 8vh, 72px); }
+.hero-sec .mark { display: block; width: clamp(160px, 40vw, 224px); height: auto; aspect-ratio: 530 / 300; margin: 0 auto clamp(44px, 8vh, 72px); }
+/* Let the dance draw past the logo's box so raised arms and kicks never get clipped. */
+.logo { overflow: visible; }

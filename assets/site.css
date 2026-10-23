@@ -173,3 +173,6 @@ a:hover { color: var(--ink); }
 .join-card { width: 100%; box-sizing: border-box; background: var(--raised); border: 1px solid rgba(250, 245, 239, 0.12); border-radius: 20px; padding: clamp(32px, 6vw, 48px) clamp(20px, 5vw, 40px); display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
 .join-card .joined { background: transparent; border: 0; padding: 0; }
 .join-band .site-footer { padding: clamp(64px, 10vh, 96px) 0 28px; }
+/* Keep the form's small print small inside the section styles. */
+.band-inner .consent { margin-top: 16px; font-size: 12px; line-height: 1.6; color: var(--ink-faint); }
+.band-inner .field-error { margin-top: 10px; font-size: 13px; line-height: 20px; color: var(--danger); }

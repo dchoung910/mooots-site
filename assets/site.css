@@ -156,3 +156,6 @@ a:hover { color: var(--ink); }
 .doc ul { padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
 .doc strong { color: var(--ink); font-weight: 600; }
 .doc .site-footer { justify-content: flex-start; margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--rule); }
+
+/* Just the three dancing figures above the hero headline. */
+.hero-sec .mark { display: block; width: clamp(136px, 34vw, 190px); height: auto; aspect-ratio: 450 / 272; margin: 0 auto clamp(44px, 8vh, 72px); }

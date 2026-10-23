@@ -49,13 +49,9 @@ a:hover { color: var(--ink); }
 .nav-cta:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
 
 /* Hero: the caption as the headline. */
-.hero-sec { width: 100%; max-width: 760px; padding: clamp(72px, 14vh, 140px) 0 clamp(64px, 10vh, 104px); text-align: center; }
-.hero-title { margin: 0; font-size: clamp(34px, 6vw, 56px); font-weight: 300; line-height: 1.12; letter-spacing: -0.02em; color: var(--ink); text-wrap: balance; }
+.hero-title { margin: 0; font-size: clamp(40px, 7vw, 64px); font-weight: 300; line-height: 1.12; letter-spacing: -0.02em; color: var(--ink); text-wrap: balance; }
 .hero-title span { color: var(--ink-soft); }
 
-/* Join the waitlist section (the header button scrolls here). */
-.join { width: 100%; max-width: 640px; display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 72px 0 80px; text-align: center; scroll-margin-top: 88px; }
-.join h2 { margin: 0; font-size: 32px; font-weight: 300; letter-spacing: -0.4px; }
 
 
 
@@ -111,17 +107,15 @@ a:hover { color: var(--ink); }
 
 /* ---------- About, How it works, Who we are, FAQ (index.html) ---------- */
 
-.info { width: 100%; max-width: 640px; display: flex; flex-direction: column; gap: 72px; padding: 0; text-align: left; }
-.info-sec { display: flex; flex-direction: column; gap: 14px; scroll-margin-top: 88px; }
-.info h2 { margin: 0; font-size: 32px; font-weight: 300; letter-spacing: -0.4px; line-height: 1.15; }
-.info p { margin: 0; font-size: 16px; line-height: 1.65; color: var(--ink-soft); }
-.info .tagline { margin-top: 6px; font-size: 21px; font-weight: 300; color: var(--ink); }
+.band-inner h2 { margin: 0; font-size: 32px; font-weight: 300; letter-spacing: -0.4px; line-height: 1.15; }
+.band-inner p { margin: 0; font-size: 16px; line-height: 1.65; color: var(--ink-soft); }
+.band-inner .tagline { margin-top: 6px; font-size: 21px; font-weight: 300; color: var(--ink); }
 
 .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 8px; }
 .step-card { background: var(--raised); border: 1px solid rgba(250, 245, 239, 0.10); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; }
 .step-card .cap { font-size: 11px; font-weight: 600; letter-spacing: 0.8px; }
 .step-card h3 { margin: 0; font-size: 17px; font-weight: 600; color: var(--ink); }
-.info .step-card p { font-size: 15px; line-height: 1.55; }
+.band-inner .step-card p { font-size: 15px; line-height: 1.55; }
 
 .facts { margin: 8px 0 0; padding: 4px 20px; background: var(--raised); border: 1px solid rgba(250, 245, 239, 0.10); border-radius: 14px; }
 .facts div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding: 14px 0; border-bottom: 1px solid rgba(250, 245, 239, 0.10); }
@@ -158,6 +152,24 @@ a:hover { color: var(--ink); }
 .doc .site-footer { justify-content: flex-start; margin-top: 72px; padding-top: 24px; border-top: 1px solid var(--rule); }
 
 /* Just the three dancing figures above the hero headline. */
-.hero-sec .mark { display: block; width: clamp(160px, 40vw, 224px); height: auto; aspect-ratio: 530 / 300; margin: 0 auto clamp(44px, 8vh, 72px); }
+.hero-band .mark { display: block; width: clamp(160px, 40vw, 224px); height: auto; aspect-ratio: 530 / 300; margin: 0 auto clamp(44px, 8vh, 72px); }
 /* Let the dance draw past the logo's box so raised arms and kicks never get clipped. */
 .logo { overflow: visible; }
+
+/* ---------- Section bands: each section gets its own full-width surface,
+   a thin line between them and room to breathe. ---------- */
+.band { width: 100%; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; padding: clamp(80px, 12vh, 128px) 24px; border-top: 1px solid var(--rule); scroll-margin-top: 70px; }
+.band-inner { width: 100%; max-width: 640px; display: flex; flex-direction: column; gap: 16px; text-align: left; }
+.band-dots { background-color: var(--paper); background-image: radial-gradient(circle, rgba(250, 245, 239, 0.11) 1.4px, transparent 1.8px); background-size: 20px 20px; background-position: 10px 10px; }
+.band-grid { background: #000000; }
+.band-plain { background: var(--paper); }
+.band h2 { margin: 0 0 4px; font-size: clamp(34px, 5vw, 40px); font-weight: 300; letter-spacing: -0.5px; line-height: 1.1; color: var(--ink); }
+
+.hero-band { border-top: 0; }
+.hero-band .band-inner { max-width: 760px; text-align: center; }
+
+/* Join the waitlist: the finale, a raised card on the grid band, footer below. */
+.join-band { padding-bottom: 0; }
+.join-card { width: 100%; box-sizing: border-box; background: var(--raised); border: 1px solid rgba(250, 245, 239, 0.12); border-radius: 20px; padding: clamp(32px, 6vw, 48px) clamp(20px, 5vw, 40px); display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.join-card .joined { background: transparent; border: 0; padding: 0; }
+.join-band .site-footer { padding: clamp(64px, 10vh, 96px) 0 28px; }

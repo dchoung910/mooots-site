@@ -184,3 +184,8 @@ a:hover { color: var(--ink); }
 .band:not(.hero-band) .band-inner { border-top: 1px solid var(--rule); padding-top: clamp(64px, 10vh, 104px); }
 .band:not(:last-child) { padding-bottom: clamp(64px, 10vh, 104px); }
 .hero-band { padding-top: clamp(72px, 12vh, 128px); }
+
+/* Privacy policy: big part headings (The Mooots app, The website and waitlist,
+   For everyone) with the old section style for the topics inside them. */
+.doc h2.part { margin: 24px 0 -8px; padding-top: 32px; border-top: 1px solid var(--rule); font-size: 28px; font-weight: 300; letter-spacing: -0.3px; }
+.doc h3 { margin: 0; font-size: 20px; font-weight: 600; color: var(--ink); }

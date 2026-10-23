@@ -26,7 +26,7 @@ a:hover { color: var(--ink); }
 /* Black header band with the app's grid (fading out downward), then the
    dot texture behind the form and footer. Same look as the app's screens. */
 .teaser { min-height: 100vh; min-height: 100dvh; display: flex; flex-direction: column; }
-.top { background: #000000; border-bottom: 1px solid var(--rule); padding: clamp(56px, 12vh, 120px) 24px clamp(48px, 9vh, 88px); display: flex; justify-content: center; text-align: center; }
+.top { background: #000000; border-bottom: 1px solid var(--rule); padding: 18px 24px; display: flex; justify-content: center; }
 .below { flex: 1 0 auto; display: flex; flex-direction: column; align-items: center; padding: 0 24px; }
 .below main { width: 100%; max-width: 800px; flex: 1 0 auto; display: flex; flex-direction: column; align-items: center; padding: clamp(48px, 8vh, 80px) 0 56px; text-align: center; }
 .below .site-footer { padding: 24px 0 28px; }
@@ -40,10 +40,12 @@ a:hover { color: var(--ink); }
 
 /* The wordmark on its own is the headline. */
 .headline { margin: 0; font-weight: 300; line-height: 0; }
-.headline .logo { display: block; width: min(360px, 72vw); height: auto; aspect-ratio: 880 / 350; }
+.headline .logo { display: block; width: clamp(104px, 26vw, 140px); height: auto; aspect-ratio: 880 / 350; }
 
-.hero { display: flex; flex-direction: column; align-items: center; gap: 28px; }
-.whisper { margin: 0; max-width: 480px; font-size: 21px; font-weight: 300; line-height: 1.5; letter-spacing: 0.01em; color: var(--ink-soft); text-wrap: balance; }
+/* Slim header bar: small logo on the left, the line right-aligned. */
+.hero { width: 100%; max-width: 1040px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.whisper { margin: 0; max-width: 380px; font-size: 15px; font-weight: 300; line-height: 1.45; letter-spacing: 0.01em; color: var(--ink-soft); text-align: right; text-wrap: balance; }
+@media (max-width: 420px) { .whisper { font-size: 13px; } }
 
 
 .waitlist { width: 100%; display: flex; flex-direction: column; align-items: center; text-align: center; }
@@ -98,7 +100,6 @@ a:hover { color: var(--ink); }
 
 /* ---------- About, How it works, Who we are, FAQ (index.html) ---------- */
 
-.more { margin-top: 40px; font-size: 13px; color: var(--ink-soft); }
 .info { width: 100%; max-width: 640px; display: flex; flex-direction: column; gap: 72px; padding: 16px 0 80px; text-align: left; }
 .info-sec { display: flex; flex-direction: column; gap: 14px; scroll-margin-top: 24px; }
 .info h2 { margin: 0; font-size: 32px; font-weight: 300; letter-spacing: -0.4px; line-height: 1.15; }

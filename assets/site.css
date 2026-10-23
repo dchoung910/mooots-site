@@ -92,8 +92,39 @@ a:hover { color: var(--ink); }
 
 .site-footer { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; font-size: 12px; color: var(--ink-faint); }
 .site-footer a { color: var(--ink-faint); }
-/* The links always stay together on one line (the © line wraps above them on phones). */
-.site-footer .links { display: inline-flex; gap: 16px; white-space: nowrap; }
+/* The © line sits on its own line on phones; the links wrap as whole links, never mid-link. */
+.site-footer .links { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; }
+.site-footer .links a { white-space: nowrap; }
+
+/* ---------- About, How it works, Who we are, FAQ (index.html) ---------- */
+
+.more { margin-top: 40px; font-size: 13px; color: var(--ink-soft); }
+.info { width: 100%; max-width: 640px; display: flex; flex-direction: column; gap: 72px; padding: 16px 0 80px; text-align: left; }
+.info-sec { display: flex; flex-direction: column; gap: 14px; scroll-margin-top: 24px; }
+.info h2 { margin: 0; font-size: 32px; font-weight: 300; letter-spacing: -0.4px; line-height: 1.15; }
+.info p { margin: 0; font-size: 16px; line-height: 1.65; color: var(--ink-soft); }
+.info .tagline { margin-top: 6px; font-size: 21px; font-weight: 300; color: var(--ink); }
+
+.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 8px; }
+.step-card { background: var(--raised); border: 1px solid rgba(250, 245, 239, 0.10); border-radius: 14px; padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+.step-card .cap { font-size: 11px; font-weight: 600; letter-spacing: 0.8px; }
+.step-card h3 { margin: 0; font-size: 17px; font-weight: 600; color: var(--ink); }
+.info .step-card p { font-size: 15px; line-height: 1.55; }
+
+.facts { margin: 8px 0 0; padding: 4px 20px; background: var(--raised); border: 1px solid rgba(250, 245, 239, 0.10); border-radius: 14px; }
+.facts div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding: 14px 0; border-bottom: 1px solid rgba(250, 245, 239, 0.10); }
+.facts div:last-child { border-bottom: 0; }
+.facts dt { font-size: 13px; color: var(--ink-faint); }
+.facts dd { margin: 0; font-size: 15px; color: var(--ink); }
+
+.faq { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+.faq details { background: var(--raised); border: 1px solid rgba(250, 245, 239, 0.10); border-radius: 14px; padding: 0 20px; }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 0; font-size: 17px; color: var(--ink); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-size: 22px; font-weight: 300; color: var(--ink-soft); }
+.faq details[open] summary::after { content: "−"; }
+.faq summary:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 4px; }
+.faq details p { padding-bottom: 18px; }
 .site-footer a:hover { color: var(--ink); }
 
 /* ---------- Text pages (privacy.html, terms.html) ---------- */

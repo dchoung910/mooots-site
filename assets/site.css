@@ -176,3 +176,11 @@ a:hover { color: var(--ink); }
 /* Keep the form's small print small inside the section styles. */
 .band-inner .consent { margin-top: 16px; font-size: 12px; line-height: 1.6; color: var(--ink-faint); }
 .band-inner .field-error { margin-top: 10px; font-size: 13px; line-height: 20px; color: var(--danger); }
+
+/* One continuous dotted surface; sections are split by a thin divider line
+   (content width, not edge to edge) with generous space around it. */
+.teaser:has(.band) { background-color: var(--paper); background-image: radial-gradient(circle, rgba(250, 245, 239, 0.11) 1.4px, transparent 1.8px); background-size: 20px 20px; background-position: 10px 10px; }
+.band { border-top: 0; padding: 0 24px; background: transparent; }
+.band:not(.hero-band) .band-inner { border-top: 1px solid var(--rule); padding-top: clamp(64px, 10vh, 104px); }
+.band:not(:last-child) { padding-bottom: clamp(64px, 10vh, 104px); }
+.hero-band { padding-top: clamp(72px, 12vh, 128px); }

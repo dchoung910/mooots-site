@@ -18,14 +18,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/AlbertSans-Light.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="assets/site.css?v=20261023b">
+<link rel="stylesheet" href="assets/site.css?v=20261023d">
 </head>
 <body>
 <div class="teaser">
 
   <header class="top grid">
-    <div class="hero">
-    <h1 class="headline">
+    <div class="bar">
+      <a class="brand" href="./" aria-label="mooots home">
       <svg class="logo" role="img" aria-label="mooots" viewBox="160 170 880 350">
         <text x="382" y="380" text-anchor="end" font-family="Albert Sans" font-weight="300" font-size="250" fill="#FAF5EF">m</text>
         <text x="828" y="380" font-family="Albert Sans" font-weight="300" font-size="250" letter-spacing="-4" fill="#FAF5EF">ts</text>
@@ -53,39 +53,19 @@
           <circle cx="530" cy="430" r="9"><animate class="dance" attributeName="cy" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="430;386;430;386;430;430"/></circle>
           <circle cx="680" cy="430" r="9"><animate class="dance" attributeName="cy" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="430;386;430;386;430;430"/></circle>
         </g>
-      </svg></h1>
-    <p class="whisper">let's go outside. just trying to build local community with spontaneous hangouts.</p>
+      </svg>
+      </a>
+      <a class="nav-cta" id="nav-join" href="#join">Join the waitlist</a>
     </div>
   </header>
 
   <div class="below dots">
-  <main>
 
-    <form class="waitlist" id="waitlist" novalidate>
-      <label for="phone">Get an invite when the app is ready</label>
-      <div class="pf" id="phone-field">
-        <span class="pf-prefix" aria-hidden="true">+1</span>
-        <input id="phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" enterkeyhint="go" placeholder="(555) 555-5555" aria-describedby="phone-error consent">
-        <button type="submit" id="join"><span class="btn-long">Join the waitlist</span><span class="btn-short">Join</span></button>
-      </div>
-      <div class="hp" aria-hidden="true">
-        <label for="website">Leave this empty</label>
-        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
-      </div>
-      <p class="field-error" id="phone-error" role="alert"></p>
-      <p class="consent" id="consent">By joining, you agree to get one text from Mooots when it's your turn. 18+ only. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms</a>.</p>
-    </form>
+    <section class="hero-sec">
+      <h1 class="hero-title">let's go outside. <span>just trying to build local community with spontaneous hangouts.</span></h1>
+    </section>
 
-    <div class="joined" id="joined" role="status" hidden>
-      <span class="badge-in">You're in</span>
-      <strong>You're on the list.</strong>
-      <span>We'll text you when it's time.</span>
-      <button type="button" class="share" id="share">Bring a friend</button>
-    </div>
-
-  </main>
-
-  <div class="info">
+    <div class="info">
 
     <section class="info-sec" id="about" aria-labelledby="about-title">
       <h2 id="about-title">About Mooots</h2>
@@ -147,19 +127,45 @@
 
   </div>
 
-  <footer class="site-footer">
-    <span>© 2026 Mooots. A product of Third Place Ventures LLC.</span>
-    <span class="links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="mailto:contact@mooots.app">contact@mooots.app</a>
-      <a href="https://www.tiktok.com/@mooots.app" rel="me noopener" target="_blank">TikTok</a>
-    </span>
-  </footer>
+
+    <section class="join" id="join" aria-labelledby="join-title">
+      <h2 id="join-title">Join the waitlist</h2>
+      <form class="waitlist" id="waitlist" novalidate>
+      <label for="phone">Get an invite when the app is ready</label>
+      <div class="pf" id="phone-field">
+        <span class="pf-prefix" aria-hidden="true">+1</span>
+        <input id="phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" enterkeyhint="go" placeholder="(555) 555-5555" aria-describedby="phone-error consent">
+        <button type="submit" id="join"><span class="btn-long">Join the waitlist</span><span class="btn-short">Join</span></button>
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label for="website">Leave this empty</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <p class="field-error" id="phone-error" role="alert"></p>
+      <p class="consent" id="consent">By joining, you agree to get one text from Mooots when it's your turn. 18+ only. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. See our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms</a>.</p>
+    </form>
+
+      <div class="joined" id="joined" role="status" hidden>
+      <span class="badge-in">You're in</span>
+      <strong>You're on the list.</strong>
+      <span>We'll text you when it's time.</span>
+      <button type="button" class="share" id="share">Bring a friend</button>
+    </div>
+    </section>
+
+    <footer class="site-footer">
+      <span>© 2026 Mooots. A product of Third Place Ventures LLC.</span>
+      <span class="links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="mailto:contact@mooots.app">contact@mooots.app</a>
+        <a href="https://www.tiktok.com/@mooots.app" rel="me noopener" target="_blank">TikTok</a>
+      </span>
+    </footer>
   </div>
 
 </div>
-<script src="assets/dance.js?v=20261023b"></script>
-<script src="assets/waitlist.js?v=20261023b"></script>
+<script src="assets/dance.js?v=20261023d"></script>
+<script src="assets/waitlist.js?v=20261023d"></script>
 </body>
 </html>

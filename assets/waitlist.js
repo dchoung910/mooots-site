@@ -68,6 +68,17 @@
     }
   });
 
+  // Header "Join the waitlist": glide down to the waitlist section and put
+  // the cursor in the phone field. Without JS the link still jumps to #join.
+  var navJoin = document.getElementById('nav-join');
+  var joinSection = document.getElementById('join');
+  navJoin.addEventListener('click', function (e) {
+    e.preventDefault();
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    joinSection.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+    if (!form.hidden) setTimeout(function () { input.focus({ preventScroll: true }); }, reduced ? 0 : 600);
+  });
+
   input.addEventListener('input', function () {
     input.value = format(digits(input.value));
     setError('');
@@ -94,6 +105,7 @@
       .then(function () {
         form.hidden = true;
         joined.hidden = false;
+        navJoin.textContent = 'You’re in';
         // A little celebration: the logo figures dance right away.
         if (window.mooootsDance) window.mooootsDance();
       })

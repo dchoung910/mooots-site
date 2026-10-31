@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/AlbertSans-Light.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="stylesheet" href="assets/site.css?v=20261023j">
+<link rel="stylesheet" href="assets/site.css?v=20261030a">
 </head>
 <body>
 <div class="teaser">
@@ -47,9 +47,9 @@
           <path d="M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446"><animate class="dance" attributeName="d" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446;M455 404 C441 394 433 380 430 366 M755 404 C769 394 777 380 780 366;M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446;M455 404 C441 394 433 380 430 366 M755 404 C769 394 777 380 780 366;M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446;M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446"/></path>
         </g>
         <g fill="#FAF5EF">
-          <circle cx="456" cy="306" r="9"/><circle cx="492" cy="306" r="9"/>
-          <circle cx="587" cy="306" r="9"/><circle cx="623" cy="306" r="9"/>
-          <circle cx="718" cy="306" r="9"/><circle cx="754" cy="306" r="9"/>
+          <g class="eyes"><circle cx="456" cy="306" r="9"/><circle cx="492" cy="306" r="9"/></g>
+          <g class="eyes"><circle cx="587" cy="306" r="9"/><circle cx="623" cy="306" r="9"/></g>
+          <g class="eyes"><circle cx="718" cy="306" r="9"/><circle cx="754" cy="306" r="9"/></g>
           <circle cx="530" cy="430" r="9"><animate class="dance" attributeName="cy" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="430;386;430;386;430;430"/></circle>
           <circle cx="680" cy="430" r="9"><animate class="dance" attributeName="cy" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="430;386;430;386;430;430"/></circle>
         </g>
@@ -61,7 +61,9 @@
 
   <section class="band hero-band">
     <div class="band-inner">
-      <svg class="logo mark" role="img" aria-label="Three friends holding hands" viewBox="340 220 530 300">
+      <button type="button" class="mark-btn" id="mark-jump" aria-label="Three friends holding hands. Tap to make them jump.">
+      <svg class="logo mark" aria-hidden="true" viewBox="340 220 530 300">
+        <g class="jumper">
         <g fill="none" stroke="#FAF5EF" stroke-width="14">
           <circle cx="455" cy="312" r="61"/><circle cx="605" cy="312" r="61"/><circle cx="755" cy="312" r="61"/>
         </g>
@@ -76,13 +78,15 @@
           <path d="M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446"><animate class="dance" attributeName="d" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446;M455 404 C441 394 433 380 430 366 M755 404 C769 394 777 380 780 366;M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446;M455 404 C441 394 433 380 430 366 M755 404 C769 394 777 380 780 366;M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446;M455 404 C443 416 437 432 436 446 M755 404 C767 416 773 432 774 446"/></path>
         </g>
         <g fill="#FAF5EF">
-          <circle cx="456" cy="306" r="9"/><circle cx="492" cy="306" r="9"/>
-          <circle cx="587" cy="306" r="9"/><circle cx="623" cy="306" r="9"/>
-          <circle cx="718" cy="306" r="9"/><circle cx="754" cy="306" r="9"/>
+          <g class="eyes"><circle cx="456" cy="306" r="9"/><circle cx="492" cy="306" r="9"/></g>
+          <g class="eyes"><circle cx="587" cy="306" r="9"/><circle cx="623" cy="306" r="9"/></g>
+          <g class="eyes"><circle cx="718" cy="306" r="9"/><circle cx="754" cy="306" r="9"/></g>
           <circle cx="530" cy="430" r="9"><animate class="dance" attributeName="cy" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="430;386;430;386;430;430"/></circle>
           <circle cx="680" cy="430" r="9"><animate class="dance" attributeName="cy" begin="indefinite" dur="2.4s" fill="freeze" calcMode="spline" keyTimes="0;0.2;0.4;0.6;0.8;1" keySplines="0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1;0.37 0 0.63 1" values="430;386;430;386;430;430"/></circle>
         </g>
+        </g>
       </svg>
+      </button>
       <h1 class="hero-title">Building local community with spontaneous hangouts. <span>Let's go outside!!</span></h1>
     </div>
   </section>
@@ -192,7 +196,8 @@
   </section>
 
 </div>
-<script src="assets/dance.js?v=20261023j"></script>
-<script src="assets/waitlist.js?v=20261023j"></script>
+<script src="assets/dance.js?v=20261030a"></script>
+<script src="assets/waitlist.js?v=20261030a"></script>
+<script src="assets/faces.js?v=20261030a"></script>
 </body>
 </html>

@@ -189,3 +189,7 @@ a:hover { color: var(--ink); }
    For everyone) with the old section style for the topics inside them. */
 .doc h2.part { margin: 24px 0 -8px; padding-top: 32px; border-top: 1px solid var(--rule); font-size: 28px; font-weight: 300; letter-spacing: -0.3px; }
 .doc h3 { margin: 0; font-size: 20px; font-weight: 600; color: var(--ink); }
+
+/* The hero figures are a button: tap them to make them jump (assets/faces.js). */
+.mark-btn { display: block; margin: 0 auto; padding: 0; border: 0; background: none; cursor: pointer; line-height: 0; border-radius: 12px; -webkit-tap-highlight-color: transparent; }
+.mark-btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 8px; }
